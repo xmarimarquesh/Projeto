@@ -36,9 +36,10 @@ if(isset($_POST['logar'])){
 <body>
 <div class="container">
     <div class="buttonsForm">
-      <div class="btnColor"></div>
+      
       <button id="btnLogar">Logar</button>
       <button id="btnRegistrar">Registrar</button>
+      <div class="btnColor"></div>
     </div>
 
     <form method="POST" id="logar">

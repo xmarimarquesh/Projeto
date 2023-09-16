@@ -6,7 +6,7 @@ document.querySelector('#btnLogar')
   .addEventListener('click', () => {
     formLogar.style.left = "25px"
     formRegistrar.style.left = "450px"
-    btnColor.style.left = "1px"
+    btnColor.style.left = "17px"
 })
 
 document.querySelector('#btnRegistrar')
