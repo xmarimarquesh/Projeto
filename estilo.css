@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
+
+body{
+    font-family: 'Josefin Slab', serif;
+    background: rgb(227,200,155);
+    background: linear-gradient(90deg, rgba(227,200,155,1) 0%, rgba(217,198,169,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    font-family: 'Josefin Slab', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: whitesmoke;
+  padding: 6px;
+  width: 350px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 darkgrey;
+}
+
+form {
+  position: absolute;
+  margin-top: 60px;
+  transition: .5s;
+  width: 300px;
+  height: 400px;
+}
+
+.buttonsForm {
+    height: 6px;
+  margin-top: 20px;
+  position: relative;
+  border-radius: 30px;
+}
+
+#btnlogar, #btnregistrar{
+    width: 500px;
+    font-size: 300px;
+}
+
+.buttonsForm button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: relative;
+  padding: 10px 29px 7px;
+}
+
+.btnColor {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  background: #7C573E;
+  border-radius: 30px;
+  transition: .3s;
+}
+
+
+
+#but-log{
+    height: 40px;
+    width: 50%;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 0;
+    justify-content: center;
+}
+
+#but-reg{
+    height: 30px;
+    width: 50%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 0;
+    justify-content: center;
+}
+
+#email-logar, #senha-logar{
+    border: none;
+    margin-top: 50px;
+    border-radius: 60px;
+    padding: 8px 0 8px 40px;
+    outline: none;
+    width: 100%;
+}
+
+#nome, #email-cad, #senha-cad, #confsenha{
+    border: none;
+    margin-top: 12px;
+    border-radius: 60px;
+    padding: 8px 0 8px 40px;
+    outline: none;
+    width: 100%;
+}
+
+#cep, #rua, #num{
+    border: none;
+    margin-top: 12px;
+    border-radius: 60px;
+    padding: 8px 0 8px 7px;
+    outline: none;
+    width: 100%;
+}
+
+h1{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding: 17px 0 0 35px;
+}
+
+
+button[type="submit"] {
+  background: #7C573E;
+  color: white;
+  border-radius: 30px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 3px 0 8px 15px;
+  font-size: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+
+#logar {
+  left: 25px;
+}
+
+#registrar {
+  left: 450px;
+}
+
+span {
+  position: absolute;
+  left: 0;
+  padding: 10px 10px;
+}
+
+#icon-email-logar {
+  top: 42px;
+}
+
+#icon-lock-logar {
+  top: 125px;
+}
+
