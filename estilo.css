@@ -32,6 +32,10 @@ body{
   box-shadow: 0 0 20px 0 darkgrey;
 }
 
+.container p{
+  color: #7C573E;
+}
+
 form {
   position: absolute;
   margin-top: 60px;
@@ -67,18 +71,20 @@ form {
   background: #7C573E;
   border-radius: 30px;
   transition: .3s;
+  
 }
 
 
 
 #but-log{
-    height: 40px;
+    height: 30px;
     width: 50%;
-    margin-top: 50px;
+    margin-top: 70px;
     display: flex;
     align-items: center;
     padding: 0 0 0 0;
     justify-content: center;
+  
 }
 
 #but-reg{
@@ -92,31 +98,40 @@ form {
 }
 
 #email-logar, #senha-logar{
+    background: none;
     border: none;
     margin-top: 50px;
-    border-radius: 60px;
-    padding: 8px 0 8px 40px;
-    outline: none;
-    width: 100%;
+    padding: 8px 0 8px 10px;
+    outline: 0;
+    width: 90%;
+    border-bottom: 2px solid #7C573E;
+    margin-left: 35px;
+     
 }
 
+
+
 #nome, #email-cad, #senha-cad, #confsenha{
+    background: none;
     border: none;
     margin-top: 12px;
-    border-radius: 60px;
-    padding: 8px 0 8px 40px;
+    padding: 8px 0 8px 10px;
     outline: none;
-    width: 100%;
-    border-bottom: 2px solid rgb(200,200,200);
+    width: 90%;
+    border-bottom: 2px solid #7C573E;
+    margin-left: 35px;
 }
 
 #cep, #rua, #num{
+    background: none;
     border: none;
     margin-top: 12px;
-    border-radius: 60px;
+    
     padding: 8px 0 8px 7px;
     outline: none;
-    width: 100%;
+    width: 90%;
+    border-bottom: 2px solid #7C573E;
+    margin-left: 35px;
 }
 
 h1{
@@ -142,6 +157,7 @@ button[type="submit"] {
 
 
 #logar {
+  margin-top: 90px;
   left: 25px;
 }
 
@@ -161,6 +177,28 @@ span {
 }
 
 #icon-lock-logar {
-  top: 125px;
+  top: 122px;
 }
 
+#icon-lock-cad{
+  top: 90px;
+}
+
+#icon-lock2-cad{
+  top: 132px;
+}
+
+#icon-email-cad{
+  top: 46px;
+}
+
+#icon-person-cad{
+  top: 4px;
+}
+
+.mensagem-sucesso {
+  background-color: #4caf50; /* Cor de fundo verde para indicar sucesso */
+  color: white; /* Cor do texto */
+  padding: 10px; /* Espaçamento interno */
+  margin-bottom: 10px; /* Margem na parte inferior para separar de outros elementos */
+}

@@ -20,6 +20,9 @@ if(isset($_POST['logar'])){
         print "<script>alert('Login inválido')</script>";
     }
 }
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -35,8 +38,29 @@ if(isset($_POST['logar'])){
 </head>
 <body>
 <div class="container">
+    <?php
+    if(isset($_POST['cadastrar'])){
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $confSenha = $_POST['confSenha'];
+        $cep = $_POST['cep'];
+        $rua = $_POST['rua'];
+        $numero_casa = $_POST['numero_casa'];
+        
+        
+        if($usuario->cadastrar($nome,$email,$senha,$confSenha,$cep,$rua,$numero_casa)){
+            echo "<p>Cadastro realizado com sucesso!</p>";
+        }else{
+            echo "Erro ao cadastrar";
+        }
+       
+    }
+    ?>
+
+    <img src="https://i.pinimg.com/564x/8b/03/04/8b0304e983865504819ec56ec50b8cd4.jpg" alt="">
+   
     <div class="buttonsForm">
-      
       <button id="btnLogar">Logar</button>
       <button id="btnRegistrar">Registrar</button>
       <div class="btnColor"></div>
@@ -69,7 +93,7 @@ if(isset($_POST['logar'])){
         <input id="cep" type="text" name="cep" placeholder="Digite seu CEP..." required>
         <input id="rua" type="text" name="rua" placeholder="Digite sua rua..." required>
         <input id="num" type="text" name="numero_casa" placeholder="Digite o número da sua casa..." required>
-        <button type="submit" name="registrar" id="but-reg">Cadastrar</button>
+        <button type="submit" name="cadastrar" id="but-reg">Cadastrar</button>
     </form>
 </div>
 
