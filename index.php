@@ -32,12 +32,28 @@ if(isset($_POST['logar'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="estilo.css">
     <title>Tela de login</title>
 </head>
 <body>
-<div class="container">
+
+<nav>
+    <img src="img/logo.png">
+    <div class="icons">
+    <span class="material-symbols-outlined" id="icon-menu">home</span>
+    <span class="material-symbols-outlined" id="icon-admin">person</span>
+    </div>
+</nav>
+
+<div class="container1">
+    <div class="imagem">
+        <img src="img/login.jpg">
+    </div>
+
+    <div class="formulario">
+        
     <?php
     if(isset($_POST['cadastrar'])){
         $nome = $_POST['nome'];
@@ -58,8 +74,6 @@ if(isset($_POST['logar'])){
     }
     ?>
 
-    <img src="https://i.pinimg.com/564x/8b/03/04/8b0304e983865504819ec56ec50b8cd4.jpg" alt="">
-   
     <div class="buttonsForm">
       <button id="btnLogar">Logar</button>
       <button id="btnRegistrar">Registrar</button>
@@ -95,6 +109,7 @@ if(isset($_POST['logar'])){
         <input id="num" type="text" name="numero_casa" placeholder="Digite o número da sua casa..." required>
         <button type="submit" name="cadastrar" id="but-reg">Cadastrar</button>
     </form>
+    </div>
 </div>
 
 <script src="index.js"></script>
