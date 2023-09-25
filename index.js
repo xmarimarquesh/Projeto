@@ -2,6 +2,8 @@ var formLogar = document.querySelector('#logar')
 var formRegistrar = document.querySelector('#registrar')
 var btnColor = document.querySelector('.btnColor')
 
+
+
 document.querySelector('#btnLogar')
   .addEventListener('click', () => {
     formLogar.style.left = "25px"
@@ -15,3 +17,19 @@ document.querySelector('#btnRegistrar')
     formRegistrar.style.left = "25px"
     btnColor.style.left = "118px"
 })
+
+document.querySelector('#produtos')
+  .addEventListener('click', () => {
+    btnColor.style.left = "118px"
+})
+
+document.querySelector('#inicio')
+  .addEventListener('click', () => {
+    btnColor.style.left = "118px"
+})
+
+document.querySelector('#sobre')
+  .addEventListener('click', () => {
+    btnColor.style.left = "118px"
+})
+

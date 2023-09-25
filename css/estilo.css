@@ -2,6 +2,7 @@
 
 body{
     font-family: 'Josefin Slab', serif;
+    background-size: cover;
     background: rgb(227,200,155);
     background: linear-gradient(90deg, rgba(227,200,155,1) 0%, rgba(217,198,169,1) 100%);
     width: 100vw;
@@ -66,6 +67,7 @@ nav img{
   width: 46.5%;
   border-radius: 0px 40px 197px 0px;
   height: 390px;
+  width: auto;
   box-shadow: 0.5px 4px 0px 0px #7C573E;
 }
 
@@ -255,3 +257,13 @@ span {
   padding: 10px 10px 10px 0;
 }
 
+header{
+
+  background-size: cover;
+  
+  
+}
+
+@media (max-width: 600px){
+
+}
