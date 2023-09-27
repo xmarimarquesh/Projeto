@@ -27,27 +27,29 @@ $email = $_SESSION['email'];
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+        <div class="navi"></div>
+
         <div class="container">
+
             <a class="navbar-brand " href="#">
                 <img src="img/logo.png" alt="Bootstrap" width="80" height="80">
             </a>
             <div class="collapse navbar-collapse pl-5" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
                     <li class="nav-item">
-                        <a id = "inicio" class=" nav-link " href="#">Inicio</a>
-                        <button class="nav-link" id="inicio">Logar</button>
+                        <a id="inicio" class=" nav-link " href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a id = "produtos" class="  nav-link" href="#">Produtos</a>
+                        <a id="produtos" class="  nav-link" href="#">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a id = "sobre" class=" nav-link" href="#">Sobre nós</a>
+                        <a id="sobre" class=" nav-link" href="#">Sobre nós</a>
                     </li>
                 </ul>
-                
+
             </div>
-            <div class="btnColor"></div>
+
             <div class="icons">
                 <a class="navbar-brand " href="#">
                     <i class="material-symbols-outlined">person</i></a>
@@ -55,13 +57,29 @@ $email = $_SESSION['email'];
         </div>
     </nav>
 
-    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
-        <div class="container1">
-            <div class="Produtos">
-                <h3>Produtos</h3>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+
+
 
 
     <script src="index.js"></script>

@@ -7,19 +7,6 @@ $database = new Conexao();
 $db = $database->getConnection();
 $usuario = new Usuario($db);
 
-if (isset($_POST['logar'])) {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-
-    if ($usuario->logar($email, $senha)) {
-        $_SESSION['email'] = $email;
-
-        header("Location: dashboard.php");
-        exit();
-    } else {
-        print "<script>alert('Login inválido')</script>";
-    }
-}
 
 
 
@@ -68,6 +55,21 @@ if (isset($_POST['logar'])) {
         <div class="formulario">
 
             <?php
+            
+            if (isset($_POST['logar'])) {
+                $email = $_POST['email'];
+                $senha = $_POST['senha'];
+
+                if ($usuario->logar($email, $senha)) {
+                    $_SESSION['email'] = $email;
+
+                    header("Location: dashboard.php");
+                    exit();
+                } else {
+                    print "<script>alert('Login inválido')</script>";
+                }
+            }
+
             if (isset($_POST['cadastrar'])) {
                 $nome = $_POST['nome'];
                 $email = $_POST['email'];
