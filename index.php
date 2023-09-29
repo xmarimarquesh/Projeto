@@ -55,17 +55,54 @@ $email = $_SESSION['email'];
         </div>
     </nav>
 
-    <div class= "corpo">
+    <section class= "corpo">
         <div class="titulo">
             <h1>Coffe's Garden</h1>
         </div>
 
         <img src="img/slide.png" alt="" id="slide">
-    </div>
+    </section>
+            <section id="produtos-destaques">
+                <h2>Produtos mais pedidos</h2>
+                <div>
+                    <h3>Café Americano</h3>
+                    <img src="img/americano.png" alt="">
+                    <div id="adc">
+                        <p>Sabor puro e tradicional, sem amargor. Descubra a perfeição em cada xícara.</p>  
+                        <button>Saiba mais!</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Buquê Girassol</h3>
+                    <img src="img/girassol.png" alt="">
+                    <div id="adc">
+                        <p>Raios de felicidade em cada pétala. Ilumine o dia com nosso buquê de girassóis.</p>
+                        <button>Saiba mais!</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Garden Blond Vanilla Latte</h3>
+                    <img src="img/garden.png" alt="">
+                    <div id="adc">
+                        <p>A doçura da baunilha encontra a suavidade do café blond. Experimente o paraíso em cada gole.</p>
+                        <button>Saiba mais!</button>
+                    </div>
+                </div>
+            </section>
+    <div id="car">
+        <span class="material-symbols-outlined" id="carrinho">shopping_cart</span>
+        </div>
+    
 
-    <div class="produtos">
-        <p>PRODUTO1</p>
-    </div>
+    <section class="rodape">
+        <div id="contato">
+            <img src="img/whatsbranco.png" alt=""><p>(41) 9 9624-3287</p>
+            <img src="img/instabranco.png" alt=""><p>@coffesgarden</p>
+        </div>
+        <div id="direitos">
+            <p>Todos os direitos reservados a coffesgarden@gmail.com</p>
+        </div>
+    </section>
 
     <script src="index.js"></script>
 
