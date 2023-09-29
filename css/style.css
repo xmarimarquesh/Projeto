@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Italianno&family=Josefin+Slab&display=swap');
+
+*{
+   font-family: 'Josefin Slab', serif;
+   
+}
+
+body{
+   font-family: 'Josefin Slab', serif;
+   background-size: cover;
+   background: rgb(21,13,0);
+background: linear-gradient(0deg, rgba(21,13,0,0.3086484593837535) 0%, rgba(21,13,0,1) 50%, rgba(21,13,0,0.29744397759103647) 100%);
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.corpo{
+   width: 100vw;
+   height: 100vh;
+   margin-top: 100px;
+   text-align: center;
+}
+
+.collapse{
+    --bs-navbar-nav-link-padding-x:3em;
+}
+
+.collapse a{
+    color: white;
+}
+
+
+h1{
+   font-family: 'Italianno', cursive;
+   font-size: 6em;
+}
+
+#slide{
+   width: 100%;
+   height: 70%;
+}
+
+#nav1{
+   background: rgb(255,255,255);
+   background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(21,13,0,1) 100%);
+}
+
+.banner-image {
+    background-image: url('img/cafezinho.png');
+    background-size: cover;
+    background-position: center 180%;
+    
+}
+
+ .navbar{
+   background-image: #0000;
+ }
+
+ 
+
+ .container1{
+    display: flex;
+    justify-content: center;
+    margin-top: 25em;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 74px 74px 0 0;
+    border: 4px solid #7C573E;
+    
+  
+ }
+
+ .Produtos{
+    position: absolute; 
+    top: 20%;
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center;
+    width: 100%; 
+    font-family: 'Galada', cursive;
+ }
+
+ .Produtos h3{
+    top: 20%;
+    overflow: visible;
+    color: white;
+    font-size: 5em;
+    text-shadow: 4px 4px #7C573E, 8px 8px white;
+    -webkit-text-stroke: 2px #7C573E;
+    font-family: 'Galada', cursive;
+
+ }
+ 
+ .btnColor {
+    bottom: 25%;
+    right: 67%;
+    position: absolute;
+    width: 60px;
+    height: 5%;
+    background: #7C573E;
+    border-radius: 30px;
+    transition: .3s;
+    
+  }
+
+
+
+ 

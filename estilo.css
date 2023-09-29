@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap');
 
 body{
@@ -32,6 +33,10 @@ nav{
 nav img{
   width: 90px;
   height: auto;
+}
+
+.material-symbols-outlined{
+  line-height: 0;
 }
 
 #icon-menu{
@@ -204,17 +209,28 @@ span {
   font-size: 27px;
 }
 
-#icon-email-logar {
-  top: 42px;
-  font-size: 21px;
-  padding: 10px 10px 10px 0;
+
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
 }
 
+#icon-email-logar,
 #icon-lock-logar {
-  top: 122px;
-  font-size: 21px;
-  padding: 10px 10px 10px 0;
+    font-size: 21px;
+    position: absolute;
+    top: 75%;
+    transform: translateY(-50%);
+    right: 15px; /* Ajuste conforme necessário */
 }
+
+#email-logar,
+#senha-logar {
+    padding-left: 40px; /* Espaço para o ícone */
+}
+
+
 
 #icon-lock-cad{
   top: 90px;
@@ -246,6 +262,8 @@ header{
   
   
 }
+
+
 
 @media (max-width: 500px){
     .imagem img{
