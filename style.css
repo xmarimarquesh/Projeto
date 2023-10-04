@@ -7,9 +7,8 @@
 
 body{
    font-family: 'Josefin Slab', serif;
-   background-size: cover;
-   background: rgb(21,13,0);
-   background: linear-gradient(0deg, rgba(21,13,0,0.3086484593837535) 0%, rgba(21,13,0,1) 50%, rgba(21,13,0,0.29744397759103647) 100%);
+   background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(237,215,189,1) 100%);
    width: 100%;
    height: auto;
    display: flex;
@@ -23,31 +22,43 @@ body{
     flex-direction: column;
    width: 100vw;
    height: auto;
-   margin-top: 100px;
+   margin-top: 70px;
    text-align: center;
    background-color: transparent;
 }
 
-.collapse{
-    --bs-navbar-nav-link-padding-x:3em;
+#slide1 {
+    position: relative;
+    width: 100%; /* Ajuste de acordo com o tamanho da sua imagem */
 }
 
-.collapse a{
-    color: white;
+#frase {
+    position: absolute;
+    top: 15%; /* Ajuste para posicionar verticalmente no meio da imagem */
+    left: 1.5em; /* Ajuste para posicionar horizontalmente no meio da imagem */
+    color: rgba(255, 255, 255, 0.634); /* Cor do texto */
+    padding: 10px; /* Espaçamento interno do texto */
+    font-size: 2.5em;
+    text-align: left;
+    
+    font-weight: bold;
 }
-
 
 h1{
    font-family: 'Italianno', cursive;
    font-size: 6em;
+   margin: 0;
+   color: #462506;
+   text-shadow: 0.5px 0.5px 5px #f8f5b1;
 }
 
 h2{
     font-size: 3em;
-    color: #00643C;
-    text-shadow: 0.05em 0.05em 0.05em #333;
-    margin: 5% 0 3% 0 ;
+    color: #462506;
+    text-shadow: 0.05em 0.05em 0.05em #f8f5b1;
+    margin: 1% 0 3% 0 ;
 }
+
 
 #slide{
    width: 100%;
@@ -55,10 +66,7 @@ h2{
    margin: 0;
 }
 
-#nav1{
-   background: rgb(255,255,255);
-   background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(21,13,0,1) 100%);
-}
+
 
 .banner-image {
     background-image: url('img/cafezinho.png');
@@ -131,43 +139,6 @@ h2{
     border-radius: 30px;
     transition: .3s;
     
-  }
-.rodape{
-    margin-top: 7%;
-    display: flex;
-    background-color: #00643C;
-    width: 100%;
-    height: 100px;
-    border-radius: 70px 70px 0 0;
-    padding-top: 10px;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.rodape #contato, #direitos{
-    display: flex;
-    justify-content: center;
-}
-
-.rodape #direitos{
-    align-items: flex-end;
-}
-
-.rodape #contato{
-    justify-content: center;
-    flex-direction: row;
-}
-
-.rodape img{
-    width: 2em;
-    height: 2em;
-    margin: 0 0px 0 10px;
-}
-
-
-.rodape p{
-    font-size: 1.4em;
-    margin: 0 10px 0 10px;
 }
 
   @media screen and (min-width: 768px){

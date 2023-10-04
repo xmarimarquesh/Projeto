@@ -21,59 +21,18 @@ include("conexao/conexao.php");
     <title>Coffe's Garden</title>
 </head>
 
-
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="nav1">
-
-        <div class="container">
-
-            <a class="navbar-brand " href="#">
-                <img src="img/logo.png" alt="Bootstrap" width="80" height="80">
-            </a>
-            <div class="collapse navbar-collapse pl-5" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
-                    <li class="nav-item">
-                        <a id="inicio" class=" nav-link " href="index.php">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="produtos" class="  nav-link" href="produtos.php">Produtos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="sobre" class=" nav-link" href="#">Sobre nós</a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div class="icons">
-            <?php
-            
-          
-                if (!empty($_SESSION['email'])) { 
-                    
-                    ?>
-                    <a href="logout.php" type="button" >Deslogar</a>
-                    <a   ><?php echo 'Olá ' .$_SESSION['nome']. '!' ;?></a>
-                    <?php
-                    
-                } else { ?>
-                    <a class="navbar-brand " href="login.php">
-                    <i class="material-symbols-outlined">person</i></a>
-                    <?php
-                }
-                ?>
-                
-            </div>
-        </div>
-    </nav>
+    <?php include_once('view/header.php'); ?>
 
     <section class= "corpo">
         <div class="titulo">
             <h1>Coffe's Garden</h1>
         </div>
 
-        <img src="img/slide.png" alt="" id="slide">
+        <div id="slide1">
+            <img src="img/slid.png" alt="" id="slide">
+            <div id="frase">Bem-vindo(a) ao nosso paraíso<br>de café e flores.</p>
+        </div>
     </section>
             <section id="produtos-destaques">
                 <h2>Produtos mais pedidos</h2>
@@ -107,15 +66,7 @@ include("conexao/conexao.php");
         </div>
     
 
-    <section class="rodape">
-        <div id="contato">
-            <img src="img/whatsbranco.png" alt=""><p>(41) 9 9624-3287</p>
-            <img src="img/instabranco.png" alt=""><p>@coffesgarden</p>
-        </div>
-        <div id="direitos">
-            <p>Todos os direitos reservados a coffesgarden@gmail.com</p>
-        </div>
-    </section>
+    <?php include_once('view/rodape.php'); ?>
 
     <script src="index.js"></script>
 
