@@ -22,8 +22,8 @@ $usuario = new Usuario($db);
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="estilo.css">
-    <title>Tela de login</title>
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
 </head>
 
 <body>
@@ -57,18 +57,35 @@ $usuario = new Usuario($db);
             <?php
             
             if (isset($_POST['logar'])) {
+                
                 $email = $_POST['email'];
                 $senha = $_POST['senha'];
-
+                $nome = $_POST['nome'];
+                $login = $_POST['email'];
+                
                 if ($usuario->logar($email, $senha)) {
-                    $_SESSION['email'] = $email;
+                        if($usuario->verificarAdm($email)){
+                            $dadosUsuario = $usuario->getDadosUsuario($email);
+                            $_SESSION['email'] = $login;
+                            $_SESSION['adm'] = true; 
+                            $_SESSION['nome'] = $dadosUsuario['nome'];
+                            header("Location: dashboard-admin.php");
+                            exit();
+                        }else{
+                            $dadosUsuario = $usuario->getDadosUsuario($email); // Suponhamos que isso retorne os dados do usuário, incluindo o nome
+                            $_SESSION['email'] = $email;
+                            $_SESSION['nome'] = $dadosUsuario['nome'];
 
-                    header("Location: dashboard.php");
-                    exit();
+                            header("Location: index.php");
+                            exit();
+                        }
+                    
                 } else {
                     print "<script>alert('Login inválido')</script>";
                 }
             }
+
+            
 
             if (isset($_POST['cadastrar'])) {
                 $nome = $_POST['nome'];

@@ -1,14 +1,11 @@
 <?php
 
 session_start();
-
-if (!isset($_SESSION['email'])) {
-    header("Location: index.php");
-    exit();
-}
+include("conexao/conexao.php");
 
 
-$email = $_SESSION['email'];
+!empty($_SESSION['email']);
+
 
 ?>
 
@@ -20,9 +17,10 @@ $email = $_SESSION['email'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Coffe's Garden</title>
 </head>
+
 
 
 <body>
@@ -36,10 +34,10 @@ $email = $_SESSION['email'];
             <div class="collapse navbar-collapse pl-5" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
                     <li class="nav-item">
-                        <a id="inicio" class=" nav-link " href="#">Inicio</a>
+                        <a id="inicio" class=" nav-link " href="index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a id="produtos" class="  nav-link" href="#">Produtos</a>
+                        <a id="produtos" class="  nav-link" href="produtos.php">Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a id="sobre" class=" nav-link" href="#">Sobre nós</a>
@@ -49,8 +47,23 @@ $email = $_SESSION['email'];
             </div>
 
             <div class="icons">
-                <a class="navbar-brand " href="login.php">
+            <?php
+            
+          
+                if (!empty($_SESSION['email'])) { 
+                    
+                    ?>
+                    <a href="logout.php" type="button" >Deslogar</a>
+                    <a   ><?php echo 'Olá ' .$_SESSION['nome']. '!' ;?></a>
+                    <?php
+                    
+                } else { ?>
+                    <a class="navbar-brand " href="login.php">
                     <i class="material-symbols-outlined">person</i></a>
+                    <?php
+                }
+                ?>
+                
             </div>
         </div>
     </nav>
