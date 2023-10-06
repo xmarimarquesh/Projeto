@@ -165,7 +165,7 @@ if ($resultFlores->rowCount() > 0) {
                         echo '<h2 class="card-title">' . $produto["nome_produto"] . '</h2>';
                         echo '<p class="card-text">' . $produto["descricao"] . '</p>';
                         echo '<div class="d-flex justify-content-around">';
-                        echo '<a href="visualizar_produto.php?id_produto=' . $produto["id_produto"] . '" name="add" class=" btn btn-primary preco">R$ ' . $produto["preco"] . '</a>';
+                        echo '<a href="visualizar_produto.php?id_produto=' . $produto["id_produto"] . '" name="add" class=" btn btn-primary preco">R$ ' . number_format($produto['preco'], 2, ',', '.'). '</a>';
                         echo '<a href="visualizar_produto.php?id_produto=' . $produto["id_produto"] . '" name="add" class=" btn btn-secondary confira shadow-sm">Confira!</a>';
                         echo '</div>';
                         echo '</div>';
@@ -189,7 +189,7 @@ if ($resultFlores->rowCount() > 0) {
                         echo '<h2 class="card-title">' . $produto["nome_produto"] . '</h2>';
                         echo '<p class="card-text">' . $produto["descricao"] . '</p>';
                         echo '<div class="d-flex justify-content-around">';
-                        echo '<a href="visualizar_produto.php?id_produto=' . $produto["id_produto"] . '" name="add" class=" btn btn-primary preco">R$ ' . $produto["preco"] . '</a>';
+                        echo '<a href="visualizar_produto.php?id_produto=' . $produto["id_produto"] . '" name="add" class=" btn btn-primary preco">R$ ' . number_format($produto['preco'], 2, ',', '.') . '</a>';
                         echo '<a href="visualizar_produto.php?id_produto=' . $produto["id_produto"] . '" name="add" class=" btn btn-secondary confira shadow-sm">Confira!</a>';
                         echo '</div>';
                         echo '</div>';
