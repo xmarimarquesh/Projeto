@@ -1,75 +1,81 @@
 <?php
-
 session_start();
-include("conexao/conexao.php");
 
+require_once('classes/Usuario.php');
+require_once('conexao/conexao.php');
 
-!empty($_SESSION['email']);
+$database = new Conexao();
+$db = $database->getConnection();
+$classUsuario = new Usuario($db);
 
+// Array para produtos em destaque
+$produtosDestaque = [];
 
+// Busca produtos em destaque
+$queryDestaque = "SELECT * FROM produtos WHERE destaque = 1";
+$resultDestaque = $db->query($queryDestaque);
+if ($resultDestaque->rowCount() > 0) {
+    while ($row = $resultDestaque->fetch(PDO::FETCH_ASSOC)) {
+        $produtosDestaque[] = $row;
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>Coffe's Garden</title>
-</head>
-
-<body>
-    <?php include_once('view/header.php'); ?>
-
-    <section class= "corpo">
-        <div class="titulo">
-            <h1>Coffe's Garden</h1>
-        </div>
-
-        <div id="slide1">
-            <img src="img/slid.png" alt="" id="slide">
-            <div id="frase">Bem-vindo(a) ao nosso paraíso<br>de café e flores.</p>
-        </div>
-    </section>
-            <section id="produtos-destaques">
-                <h2>Produtos mais pedidos</h2>
-                <div>
-                    <h3>Café Americano</h3>
-                    <img src="img/americano.png" alt="">
-                    <div id="adc">
-                        <p>Sabor puro e tradicional, sem amargor. Descubra a perfeição em cada xícara.</p>  
-                        <button>Saiba mais!</button>
-                    </div>
-                </div>
-                <div>
-                    <h3>Buquê Girassol</h3>
-                    <img src="img/girassol.png" alt="">
-                    <div id="adc">
-                        <p>Raios de felicidade em cada pétala. Ilumine o dia com nosso buquê de girassóis.</p>
-                        <button>Saiba mais!</button>
-                    </div>
-                </div>
-                <div>
-                    <h3>Garden Blond Vanilla Latte</h3>
-                    <img src="img/garden.png" alt="">
-                    <div id="adc">
-                        <p>A doçura da baunilha encontra a suavidade do café blond. Experimente o paraíso em cada gole.</p>
-                        <button>Saiba mais!</button>
-                    </div>
-                </div>
-            </section>
-    <div id="car">
-        <span class="material-symbols-outlined" id="carrinho">shopping_cart</span>
-        </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+<body>
+<?php include_once('view/header.php'); ?>
+    <section id="corpo">
+        <img src="img/slide.png" alt="" id="slide">
+        <h1 id="titulo">Coffe's Garden</h1>
+        <section id="container">
+        <div id="frase">Explore nosso jardim de delícias, onde café e flores se unem para criar um verdadeiro paraíso.</div>
 
-    <?php include_once('view/rodape.php'); ?>
+        <div class="container">
+            <div class="row destaque">
+                <div class="col-md-12 destaque">
+                    <h2>Produtos em Destaque</h2>
+                </div>
+                <!-- Exibe produtos em destaque -->
+                <?php
+                foreach ($produtosDestaque as $produto) {
+                    echo '<div class="col-md-3 product-card ">';
+                    echo '<div class="card shadow">';
+                    echo '<div class="cinza">';
+                    echo '<img src="' . $produto["foto_produto"] . '" alt="' . $produto["nome_produto"] . '" class="card-img-top">';
+                    echo '</div>';
+                    echo '<div class="card-body">';
+                    echo '<h2 class="card-title">' . $produto["nome_produto"] . '</h2>';
+                    echo '<p class="card-text">' . $produto["descricao"] .'</p>';
+                    echo '<div class="d-flex justify-content-around">';
+                    echo '<a href="visualizar_produto.php?id_produto=' . $produto["id_produto"] . '" name="add" class=" btn btn-primary preco">R$ '. $produto["preco"] .'</a>';
+                    echo '<a href="visualizar_produto.php?id_produto=' . $produto["id_produto"] . '" name="add" class=" btn btn-secondary confira shadow-sm">Confira!</a>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+        </div>
 
-    <script src="index.js"></script>
+        <?php include_once('view/rodape.php'); ?>
+    </section>
+        
+        
 
+    </section>
 </body>
-
 </html>

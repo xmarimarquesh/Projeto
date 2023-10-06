@@ -37,18 +37,22 @@ body{
     flex-direction: column;
 }
 
-.produto{
+.sobre{
+    position: relative;
+    top: -45px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-#container h1{
+.sobre h1{
+    -webkit-text-stroke: 2px #7C573E;
     color: white;
     font-family: 'Galada', cursive;
     font-size: 5em;
-    text-shadow: 0.05em 0.05em 0em #7C573E;
+    text-shadow: 0.05em 0.05em 0em #7C573E,
+    0.1em 0.1em 0em #ffffff;
 }
 
 #prod-cafe {
@@ -87,6 +91,30 @@ body{
     font-size: 1.7em;
     text-shadow: 0.05em 0.05em 0.05em #333;
 }
+
+.telas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.texto{
+    max-width: 40%;
+    margin-right: 30px;
+    font-size: 1.5em;
+}
+
+.img{
+    max-width: 50%;
+}
+
+.img img{
+    border-radius: 35px;
+    border: 5px solid #7C573E;
+}
+
 
 
 

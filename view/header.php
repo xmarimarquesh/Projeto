@@ -49,7 +49,7 @@
 
         <div class="container">
 
-            <a class="navbar-brand " href="#">
+            <a class="navbar-brand " href="index.php">
                 <img src="img/logo.png" alt="Bootstrap" width="80" height="80">
             </a>
             <div class="collapse navbar-collapse pl-5" id="navbarText">
@@ -74,7 +74,7 @@
                 if (!empty($_SESSION['email'])) {
 
                 ?>
-                    <a id="ola"><?php echo 'Olá, ' . $_SESSION['nome'] . '!'; ?></a>
+                    <a id="ola"><?php echo 'Olá, ' . ucfirst($_SESSION['nome']) . '!'; ?></a>
                     <a class="navbar-brand " id="lo" href="logout.php">
                         <i class="material-symbols-outlined">logout</i></a>
                 <?php

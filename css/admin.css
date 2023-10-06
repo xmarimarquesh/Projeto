@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Italianno&family=Josefin+Slab&display=swap');
+
+
+* {
+    font-family: 'Josefin Slab', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o formulário */
+form {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para os rótulos (labels) */
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 2%;
+  }
+  
+  /* Estilos para as caixas de entrada (inputs) */
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #4a321e;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para o botão de envio */
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  /* Estilo para o select */
+select {
+  
+    width: 200px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para as opções */
+  option {
+    padding: 5px;
+  }
+  
+  /* Estilo para quando o select está focado */
+  select:focus {
+    border-color: #007bff;
+  }
+  
+  /* Estilo para o container do input de arquivo */
+.upload-container {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+/* Estilo para o input de arquivo oculto */
+#ft input[type="file"] {
+  background-color: #4a321e;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+
+/* Estilo para o botão de escolha de arquivo */
+#ft {
+  background-color: #ab7a60;
+  color: #3c2d1f;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Estilo para a tabela */
+.tabela-produtos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o cabeçalho da tabela (thead) */
+.tabela-produtos th {
+  background-color: #775136;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Estilo para as células de dados (tbody) */
+.tabela-produtos td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Estilo para linhas ímpares */
+.tabela-produtos tbody tr:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+/* Estilo para o texto da coluna "Caminho da Imagem" */
+.tabela-produtos td:nth-child(5) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* Ajuste o valor conforme necessário */
+}
+
+/* Estilo para a imagem na coluna "Caminho da Imagem" (se aplicável) */
+.tabela-produtos td:nth-child(5) img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+  

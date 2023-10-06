@@ -33,7 +33,7 @@ $usuario = new Usuario($db);
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top bg-transparent">
         <div class="container">
-            <a class="navbar-brand " href="#">
+            <a class="navbar-brand " href="index.php">
                 <img src="img/logo.png" alt="Bootstrap" width="30" height="24">
             </a>
             <div class="icons">

@@ -18,7 +18,7 @@ include("conexao/conexao.php");
     <title>Sobre nós</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="sobre.css">
+    <link rel="stylesheet" href="css/sobre.css">
 </head>
 
 <body>
@@ -30,10 +30,25 @@ include("conexao/conexao.php");
             <div class="sobre">
                 <h1>Sobre Nós</h1>
             </div>
+            <div class='telas'>
+                <div class="texto">
+                    <p>
+                        No Refúgio Perfumado, unimos a paixão pelo café e o amor pelas flores para criar experiências únicas e memoráveis. Fundada por entusiastas do café e 
+                        amantes das flores, nossa missão é trazer beleza, sabor e inspiração para o seu dia a dia. Selecionamos os melhores grãos de café e flores frescas para 
+                        proporcionar uma jornada sensorial inesquecível. Nosso compromisso com a sustentabilidade reflete o cuidado que temos com o planeta. Seja para um momento
+                         de relaxamento ou uma celebração especial, no Refúgio Perfumado, a simplicidade e sofisticação se encontram.
+                    </p>
 
-            <p>Coffe's Garden é um encantador estabelecimento que combina a essência acolhedora de uma cafeteria com a beleza exuberante de uma floricultura, proporcionando aos seus clientes uma experiência única e relaxante. Localizada em um local pitoresco e tranquilo, esta joia escondida oferece um refúgio da agitação da vida cotidiana.</p>
+                </div>
+                <div class="img">
+                    <img src="img/coffee-5428480_1280.jpg" alt="" width="450px" height="auto">
+                </div>
+            </div>
+
 
             <?php include_once('view/rodape.php'); ?>
+
+
 
         </section>
 

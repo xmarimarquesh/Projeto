@@ -41,11 +41,10 @@ if (isset($_GET['action'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard ADM</title>
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 
 <body>
@@ -56,10 +55,6 @@ if (isset($_GET['action'])) {
 
         <form method="POST" action="?action=create" enctype="multipart/form-data" class="mt-5">
             <div class="mb-3">
-                <label for="nome_produto" class="form-label">Nome do Produto</label>
-                <input type="text" name="nome_produto" class="form-control" required>
-            </div>
-            <div class="mb-3">
                 <label for="tipo" class="form-label">Tipo</label>
                 <select name="tipo" class="form-select">
                     <option value="cafe">Café</option>
@@ -67,22 +62,33 @@ if (isset($_GET['action'])) {
                 </select>
             </div>
             <div class="mb-3">
+                <label for="destaque" class="form-label">Produto Destaque</label>
+                <select name="destaque" class="form-select">
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="nome_produto" class="form-label">Nome do Produto</label>
+                <input type="text" name="nome_produto" class="form-control" required>
+            </div>
+            <div class="mb-3">
                 <label for="descricao" class="form-label">Descrição</label>
                 <input type="text" name="descricao" class="form-control" required>
             </div>
-			<div class="mb-3">
+            <div class="mb-3">
                 <label for="preco" class="form-label">Preço do Produto</label>
-                <input type="number" name="preco" class="form-control" required>
+                <input type="text" name="preco" class="form-control" required>
             </div>
 
             <div class="mb-3">
                 <label for="foto_produto" class="form-label">Foto do Produto</label>
-                <input type="file" name="foto_produto" class="form-control">
+                <input type="file" name="foto_produto" class="form-control" id="ft">
             </div>
             <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
         </form>
 
-        <table class="table mt-5">
+        <table class="table mt-5 tabela-produtos">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -115,9 +121,9 @@ if (isset($_GET['action'])) {
     <!-- Inclua os arquivos JavaScript do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
 
-	<footer class="footer">
-        
-	</footer>
+    <footer class="footer">
+
+    </footer>
 </body>
 
 </html>

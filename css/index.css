@@ -15,6 +15,8 @@ body{
 
 #slide{
     width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 #corpo {
@@ -23,9 +25,8 @@ body{
 }
   
 #container {
-   
     border-radius: 50px 50px 0 0;
-    margin-top: 200px;
+    margin-top: 30em;
     position: absolute;
     top: 0;
     left: 0;
@@ -34,43 +35,30 @@ body{
     background-color: #ffffff;
     display: flex;
     align-items: center;
-    
     flex-direction: column;
 }
 
-.produto{
-    position: relative;
-    top: -45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-#container h1{
-    -webkit-text-stroke-width: 2px; /* largura da borda */
-    -webkit-text-stroke-color: #7C573E; /* cor da borda */
-    color: white;
-    font-family: 'Galada', cursive;
-    font-size: 5em;
-    text-shadow: 0.05em 0.05em 0em #7C573E,
-                0.10em 0.10em 0em #FFFFFF ;
-}
-
-#prod-cafe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-}
-
-.product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#titulo {
+    position: absolute;
+    top: 20%; /* Ajuste para posicionar verticalmente no meio da imagem */
+    left: 50%; /* Ajuste para posicionar horizontalmente no meio da imagem */
+    color: rgba(255, 255, 255, 0.634); /* Cor do texto */
+    padding: 10px; /* Espaçamento interno do texto */
+    font-size:8em;
     text-align: center;
-    margin-top: 30px;
+    font-family: 'Italianno', cursive;
+    transform: translate(-50%, -50%);
 }
+
+#frase{
+    font-size: 1.7em;
+    margin-top: 2%;
+    color: #462506;
+    
+}
+
+
+
 
 .product img {
     width: 50%;
@@ -157,6 +145,15 @@ body{
     padding: 0;
 }
 
+.destaque{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.destaque h2{
+    margin: 5% 0;
+}
 @media screen and (min-width: 768px) {
     #prod-cafe {
         flex-direction: row;
