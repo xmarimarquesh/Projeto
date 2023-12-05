@@ -101,7 +101,7 @@ if ($stmt) {
                     // Você pode lidar com a resposta aqui se necessário
 
                     // Redirecione para a página index.php após o sucesso
-                    
+                    window.location.href('index.php');
                     alert("Pedido realizado com sucesso!");
                 }
             });

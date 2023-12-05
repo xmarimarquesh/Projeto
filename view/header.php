@@ -211,10 +211,10 @@
                     $usuario = new Usuario($db);
                     $isAdmin = $usuario->verificarAdm($login);
                     $id = $_SESSION['user_id'];
-                
+
                     if ($isAdmin) {
 
-                    ?>
+                ?>
                         <a id="ola">
                             <?php echo 'Olá, ' . ucfirst($_SESSION['nome']) . '!'; ?>
                         </a>
@@ -303,13 +303,17 @@
                 </div>
 
                 <div class="modal-body">
-                    <!-- Aqui você pode exibir os itens do pedido -->
-                    <!-- Exemplo: -->
-                    <ul id="pedido-produtos">
-
-                        <!-- ... Adicione dinamicamente os itens do pedido aqui ... -->
+                    <div id="detalhesPedido">
+                        <p><strong>Preço Total:</strong> <span id="precoTotal"></span></p>
+                        <p><strong>Rua:</strong> <span id="ruaPedido"></span></p>
+                        <p><strong>Método de Pagamento:</strong> <span id="metodoPagamento"></span></p>
+                    </div>
+                    <button id="mostrarProdutosBtn" class="btn btn-info">Mostrar Produtos</button>
+                    <ul id="pedido-produtos" style="display: none;">
+                        <!-- ... Produtos serão adicionados aqui ... -->
                     </ul>
                 </div>
+
 
                 <div class="modal-footer">
                     <div id="mensagemAviso" style="display: none; background-color: #ffc107; color: #333; padding: 10px;">
@@ -353,7 +357,6 @@
         } else {
             echo "Erro na atualização!";
         }
-        
     }
     ?>
 
@@ -616,26 +619,45 @@
 
     });
 
-    $(document).ready(function () {
-        // Chama o script PHP usando AJAX
+    $(document).ready(function() {
         $.ajax({
             url: 'get_pedido.php',
             type: 'GET',
             dataType: 'json',
-            success: function (data) {
-                // Atualiza dinamicamente a lista de produtos na modal
-                var produtosList = $('#pedido-produtos');
-                produtosList.empty();
+            success: function(data) {
+                var modalBody = $('#pedidoModal .modal-body');
+                modalBody.empty(); // Limpa o conteúdo anterior
 
-                for (var i = 0; i < data.length; i++) {
-                    var pedido = data[i];
-                    var pedidoId = pedido.id_pedido;
-                    var produtoNome = pedido.nome_produto;
+                data.forEach(function(pedido) {
+                    var htmlPedido = '<div class="detalhesPedido">' +
+                        '<p><strong>Preço Total:</strong> ' + pedido.preco_total + '</p>' +
+                        '<p><strong>Rua:</strong> ' + pedido.rua + '</p>' +
+                        '<p><strong>Método de Pagamento:</strong> ' + pedido.metodo_pagamento + '</p>' +
+                        '<button class="btn btn-secondary mostrarProdutosBtn">Mostrar Produtos</button>' +
+                        '<ul class="pedido-produtos" style="display: none;">';
 
-                    produtosList.append('<li>Pedido #' + pedidoId + ': ' + produtoNome + '</li>');
-                }
+                    pedido.produtos.forEach(function(produto) {
+                        htmlPedido += '<li>' +
+                            '<img src="' + produto.foto_produto + '" alt="' + produto.nome_produto + '" style="width: 50px; height: 50px;"> ' +
+                            produto.nome_produto + ' - Quantidade: ' + produto.quantidade + ' - Preço: ' + produto.preco +
+                            '</li>';
+                    });
+
+                    
+
+                    htmlPedido += '</ul></div>';
+
+                    htmlPedido += '<tr class="linha-divisao"><td colspan="4"><hr></td></tr>';
+
+                    modalBody.append(htmlPedido);
+                });
+
+                // Adiciona evento de clique para mostrar produtos
+                $('.mostrarProdutosBtn').click(function() {
+                    $(this).next('.pedido-produtos').toggle();
+                });
             },
-            error: function (error) {
+            error: function(error) {
                 console.log('Erro ao obter dados do pedido:', error);
             }
         });

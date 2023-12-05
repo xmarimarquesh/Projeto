@@ -19,6 +19,8 @@ function transferirCarrinhoTemporario($conn, $id_usuario, $chave_carrinho_temp) 
     $conn->query($sql_transferir);
 }
 
+
+
 // Verificar se o ID do produto foi fornecido
 if (isset($_POST['id_produto'])) {
     $id_produto = $_POST['id_produto'];
